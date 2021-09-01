@@ -35,7 +35,7 @@ printLine n
 getNewCoords :: [Integer] -> IO [Integer];
 getNewCoords a = getWithinBounds . sumCoords <$> getChar
   where
-  sumCoords k = zipWith (+) a (viKey k)
+  sumCoords = zipWith (+) a . viKey
   getWithinBounds = getBelowMax . getAboveMin
   getBelowMax = zipWith min (map (boadSize !!) [0,1])
   getAboveMin = zipWith max [0,0]
