@@ -20,10 +20,11 @@ printBoad g = wrap $ init $ foldr (++) [] $ prettify lines
 
 printLine :: Integer -> [Char];
 printLine n
-  | n == (-1) = take k bk
-  | otherwise = take (toInt n) bk ++ "@" ++ (take n1 bk)
+  | n == (-1) = take k boadSpace
+  | otherwise = take (toInt n) boadSpace ++ "@" ++ (take n1 boadSpace)
   where
-    bk = repeat '.'
+    boadSpace :: [Char]
+    boadSpace = repeat '.'
     toInt = \a -> fromIntegral a :: Int
     k = toInt $ boadSize !! 0 + 1
     n1 = toInt $ (boadSize !! 0) - n
