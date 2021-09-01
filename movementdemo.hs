@@ -58,4 +58,5 @@ mane = \a -> getNewCoords a >>= \newCoords ->
   putStrLn (printBoad newCoords ++ "\n") >> mane newCoords;
 
 main :: IO ();
-main = hSetBuffering stdin NoBuffering >> mane [0,0];
+main = hSetBuffering stdin NoBuffering >> hSetEcho stdin False >>
+       mane [0,0];
