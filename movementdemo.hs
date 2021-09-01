@@ -40,11 +40,12 @@ getNewCoords a = getChar >>= \b -> return $ getWithinBounds $ sumCoords b;
   getAboveMin = zipWith max [0,0]
 
 viKey :: Char -> [Integer];
-viKey 'h' = [-1,0];
-viKey 'j' = [0,-1];
-viKey 'k' = [0, 1];
-viKey 'l' = [1, 0];
-viKey n   = [0, 0];
+viKey k = case k of
+  'h' -> [-1,0]
+  'j' -> [0,-1]
+  'k' -> [0, 1]
+  'l' -> [1, 0]
+  _   -> [0, 0];
 
 mane :: [Integer] -> IO ();
 mane = \a -> getNewCoords a >>= \newCoords ->
