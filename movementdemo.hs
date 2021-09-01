@@ -25,7 +25,8 @@ printLine n
   where
     boadSpace :: [Char]
     boadSpace = repeat '.'
-    toInt = \a -> fromIntegral a :: Int
+    toInt :: Integral a => a -> Int
+    toInt = fromIntegral
     k = toInt $ boadSize !! 0 + 1
     n1 = toInt $ (boadSize !! 0) - n
 
