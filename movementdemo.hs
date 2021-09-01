@@ -16,7 +16,7 @@ printBoad g = wrap $ init $ foldr (++) [] $ prettify lines
       | j == g !! 1 = g !! 0
       | otherwise = -1
     wrap k = bvx ++ "\n" ++ k ++ "\n" ++ bvx
-    bvx = take (fromInteger $ boadSize !! 0 + 3:: Int) (repeat '-')
+    bvx = take (fromInteger $ boadSize !! 0 + 3 :: Int) (repeat '-')
 
 printLine :: Integer -> [Char];
 printLine n
