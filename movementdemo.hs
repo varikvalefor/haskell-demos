@@ -9,7 +9,7 @@ boadSize = [20,10];
 -- GRAPHICAL CRAP
 printBoad :: [Integer] -> [Char];
 printBoad g = wrap $ init $ foldr (++) [] $ prettify lines
-  where 
+  where
     lines = reverse $ map (printLine . d) [0..boadSize !! 1]
     prettify = map ((++ "|\n") . ("|"++))
     d j
