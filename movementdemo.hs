@@ -33,7 +33,7 @@ printLine n
 
 -- GENERAL CRAP
 getNewCoords :: [Integer] -> IO [Integer];
-getNewCoords a = getChar >>= \b -> return $ getWithinBounds $ sumCoords b;
+getNewCoords a = getChar >>= \b -> return $ getWithinBounds $ sumCoords b
   where
   sumCoords k = zipWith (+) a (viKey k)
   getWithinBounds = getBelowMax . getAboveMin
