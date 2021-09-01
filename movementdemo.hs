@@ -1,5 +1,8 @@
 -- NOTE: This program does not support multiple characters and
 -- is best used to demonstrate the fetching of user input.
+
+import System.IO;
+
 -- CONFIG CRAP
 boadSize :: [Integer];
 boadSize = [20,10];
@@ -55,4 +58,4 @@ mane = \a -> getNewCoords a >>= \newCoords ->
   putStrLn (printBoad newCoords ++ "\n") >> mane newCoords;
 
 main :: IO ();
-main = mane [0,0];
+main = hSetBuffering stdin NoBuffering >> mane [0,0];
